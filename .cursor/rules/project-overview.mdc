@@ -1,0 +1,21 @@
+---
+alwaysApply: true
+---
+## Project Overview
+This is a personal portfolio website built with Next.js.
+
+## Tech Stack
+- Framework: Next.js (App Router)
+- Language: TypeScript
+- Styling: Tailwind CSS
+
+## Code Standards
+- Use TypeScript for all files
+- Use functional components only
+- Always include error handling
+- Use descriptive variable names
+
+## Folder Structure
+- /app → pages and routing
+- /components → reusable UI components
+- /lib → utility functions
