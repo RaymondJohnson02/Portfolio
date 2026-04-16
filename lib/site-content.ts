@@ -54,7 +54,7 @@ export const hero: HeroContent = {
   subline: "",
   intro:
     'I am a <span class="font-medium text-zinc-200">Software engineer</span> with almost <span class="font-medium text-zinc-200">3 years of experiences</span> building and maintaining applications using <span class="font-medium text-zinc-200">.NET</span>, <span class="font-medium text-zinc-200">SQL Server</span>, and <span class="font-medium text-zinc-200">PostgreSQL</span>. Focused on <span class="font-medium text-zinc-200">backend development</span> with an interest in <span class="font-medium text-zinc-200">system design</span> and <span class="font-medium text-zinc-200">performance optimization</span>, while also working with modern frontend tools like <span class="font-medium text-zinc-200">Next.js</span> and <span class="font-medium text-zinc-200">TypeScript</span>.',
-  cvHref: "/cv.pdf",
+  cvHref: "/CV.pdf",
   photoSrc: null,
   // photoSrc: "/photos/profile.jpg",
 };
