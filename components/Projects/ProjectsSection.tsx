@@ -75,9 +75,6 @@ export function ProjectsSection() {
     <section id="projects" className="border-b border-zinc-800 py-16 sm:py-20">
       <Container>
         <SectionHeading>Projects</SectionHeading>
-        <p className="-mt-4 mb-8 max-w-2xl text-sm text-zinc-500">
-          Selected work—impact first, stack second.
-        </p>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project) => (
             <ProjectCard key={project.title} project={project} />

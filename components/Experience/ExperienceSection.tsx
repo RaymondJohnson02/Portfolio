@@ -1,5 +1,6 @@
 import { Container } from "@/components/Container";
 import { CompanyLogo } from "./CompanyLogo";
+import { SectionHeading } from "../SectionHeading";
 
 interface ExperienceItem {
   title: string;
@@ -53,15 +54,7 @@ export function ExperienceSection() {
       className="border-b border-zinc-800 bg-zinc-950 py-20 sm:py-24"
     >
       <Container>
-        <div className="mb-12 max-w-2xl">
-          <h2 className="mb-4 text-xs font-medium uppercase tracking-[0.2em] text-zinc-500">
-            Experience
-          </h2>
-          <p className="text-sm leading-relaxed text-zinc-500">
-            Roles and impact—details live in my CV; this is the short version for a
-            quick scan.
-          </p>
-        </div>
+        <SectionHeading>Experience</SectionHeading>
 
         <div className="rounded-xl border border-zinc-800 bg-zinc-900/25 p-6 sm:p-8 lg:p-10">
           <div className="divide-y divide-zinc-800">

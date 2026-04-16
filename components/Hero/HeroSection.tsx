@@ -1,10 +1,10 @@
 import Image from "next/image";
 import { Container } from "@/components/Container";
+import { SectionHeading } from "../SectionHeading";
 
 export interface HeroContent {
   displayName: string;
   eyebrow: string;
-  headline: string;
   subline: string;
   intro: string;
   cvHref: string | null;
@@ -16,13 +16,13 @@ export interface HeroContent {
 
 export const hero: HeroContent = {
   displayName: "Raymond Johnson",
-  headline: "About Me",
   eyebrow: "Software Engineer · Jakarta, Indonesia",
   subline: "",
   intro:
     'I am a <span class="font-medium text-zinc-200">Software engineer</span> with almost <span class="font-medium text-zinc-200">3 years of experiences</span> building and maintaining applications using <span class="font-medium text-zinc-200">.NET</span>, <span class="font-medium text-zinc-200">SQL Server</span>, and <span class="font-medium text-zinc-200">PostgreSQL</span>. Focused on <span class="font-medium text-zinc-200">backend development</span> with an interest in <span class="font-medium text-zinc-200">system design</span> and <span class="font-medium text-zinc-200">performance optimization</span>, while also working with modern frontend tools like <span class="font-medium text-zinc-200">Next.js</span> and <span class="font-medium text-zinc-200">TypeScript</span>.',
   cvHref: "/CV.pdf",
-  photoSrc: null,
+  photoSrc: null
+  // photoSrc: "/photos/logo-accelist.jpg",
   // photoSrc: "/photos/profile.jpg",
 };
 
@@ -38,16 +38,10 @@ export function HeroSection() {
           className={
             hasPhoto
               ? "grid grid-cols-1 gap-y-4 lg:grid-cols-[minmax(0,1fr)_280px] lg:gap-x-12 lg:gap-y-4 xl:gap-x-16"
-              : "flex flex-col gap-4"
+              : "flex flex-col"
           }
         >
-          <h1
-            className={`text-3xl font-bold tracking-tight text-zinc-50 sm:text-4xl lg:text-5xl ${
-              hasPhoto ? "row-start-2 lg:col-start-1" : ""
-            }`}
-          >
-            {content.headline}
-          </h1>
+          <SectionHeading>About Me</SectionHeading>
           <p
             className={`text-xs font-medium uppercase tracking-[0.2em] text-zinc-500 ${
               hasPhoto ? "row-start-1 lg:col-start-1" : ""
