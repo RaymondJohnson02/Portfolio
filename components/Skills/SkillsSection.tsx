@@ -1,12 +1,21 @@
 import { Container } from "@/components/Container";
 import { SectionHeading } from "@/components/SectionHeading";
 
-export function SkillsSection({ skills }: { skills: readonly string[] }) {
+export const skills: readonly string[] = [
+  "Python",
+  "Go",
+  "TypeScript",
+  "PostgreSQL",
+  "Redis",
+  "Docker",
+  "Distributed systems",
+  "System design",
+  "CI/CD",
+] as const;
+
+export function SkillsSection() {
   return (
-    <section
-      id="skills"
-      className="border-b border-zinc-800 py-16 sm:py-20"
-    >
+    <section id="skills" className="border-b border-zinc-800 py-16 sm:py-20">
       <Container>
         <SectionHeading>Skills &amp; technologies</SectionHeading>
         <ul className="flex flex-wrap gap-2">
@@ -22,3 +31,4 @@ export function SkillsSection({ skills }: { skills: readonly string[] }) {
     </section>
   );
 }
+

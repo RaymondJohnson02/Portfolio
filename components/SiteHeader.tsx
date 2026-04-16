@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Container } from "@/components/Container";
-import type { HeroContent } from "@/lib/site-content";
+import { hero } from "@/components/Hero/HeroSection";
 
 const nav = [
   { label: "About", href: "#about" },
@@ -12,7 +12,7 @@ const nav = [
   { label: "Contact", href: "#contact" },
 ] as const;
 
-export function SiteHeader({ hero }: { hero: HeroContent }) {
+export function SiteHeader() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {

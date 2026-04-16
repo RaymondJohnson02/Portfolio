@@ -1,14 +1,37 @@
 import { Container } from "@/components/Container";
 import { SectionHeading } from "@/components/SectionHeading";
-import type { SocialLink } from "@/lib/site-content";
 
-export function ContactSection({ links }: { links: readonly SocialLink[] }) {
+export interface SocialLink {
+  label: string;
+  href: string;
+  external?: boolean;
+}
+
+export const social: readonly SocialLink[] = [
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com",
+    external: true,
+  },
+  {
+    label: "GitHub",
+    href: "https://github.com",
+    external: true,
+  },
+  {
+    label: "Email",
+    href: "mailto:hello@example.com",
+    external: false,
+  },
+] as const;
+
+export function ContactSection() {
   return (
     <footer id="contact" className="py-16 sm:py-20">
       <Container>
         <SectionHeading>Get in touch</SectionHeading>
         <div className="flex flex-wrap gap-3">
-          {links.map((link) => (
+          {social.map((link) => (
             <a
               key={link.href}
               href={link.href}
@@ -25,3 +48,4 @@ export function ContactSection({ links }: { links: readonly SocialLink[] }) {
     </footer>
   );
 }
+

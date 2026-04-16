@@ -1,27 +1,20 @@
-import { ContactSection } from "@/components/ContactSection";
 import { ExperienceSection } from "@/components/Experience/ExperienceSection";
-import { HeroSection } from "@/components/HeroSection";
-import { ProjectsSection } from "@/components/ProjectsSection";
+import { HeroSection } from "@/components/Hero/HeroSection";
+import { ProjectsSection } from "@/components/Projects/ProjectsSection";
 import { SiteHeader } from "@/components/SiteHeader";
-import { SkillsSection } from "@/components/SkillsSection";
-import {
-  experience,
-  hero,
-  projects,
-  skills,
-  social,
-} from "@/lib/site-content";
+import { SkillsSection } from "@/components/Skills/SkillsSection";
+import { ContactSection } from "@/components/Contact/ContactSection";
 
 export default function Home() {
   return (
     <>
-      <SiteHeader hero={hero} />
+      <SiteHeader />
       <main>
-        <HeroSection content={hero} />
-        <ExperienceSection items={experience} />
-        <SkillsSection skills={skills} />
-        <ProjectsSection projects={projects} />
-        <ContactSection links={social} />
+        <HeroSection />
+        <ExperienceSection />
+        <SkillsSection />
+        <ProjectsSection />
+        <ContactSection />
       </main>
     </>
   );

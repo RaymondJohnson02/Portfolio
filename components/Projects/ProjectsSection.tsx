@@ -1,6 +1,41 @@
 import { Container } from "@/components/Container";
 import { SectionHeading } from "@/components/SectionHeading";
-import type { ProjectItem } from "@/lib/site-content";
+
+export type ProjectKind = "Open source" | "Work project" | "Side project";
+
+export interface ProjectItem {
+  kind: ProjectKind;
+  title: string;
+  description: string;
+  stack: string;
+  href?: string;
+}
+
+export const projects: readonly ProjectItem[] = [
+  {
+    kind: "Open source",
+    title: "Rate limiter library",
+    description:
+      "Migrated legacy monolith rate limiting to a shared library, reducing p99 latency by 40%.",
+    stack: "Go · Redis · Docker",
+    href: "https://github.com",
+  },
+  {
+    kind: "Work project",
+    title: "Event pipeline hardening",
+    description:
+      "Improved delivery guarantees and observability for high-volume Kafka consumers.",
+    stack: "Kafka · Kubernetes · AWS",
+  },
+  {
+    kind: "Side project",
+    title: "API contract testing toolkit",
+    description:
+      "Lightweight TypeScript tooling to keep service contracts aligned across teams.",
+    stack: "TypeScript · gRPC · CI/CD",
+    href: "https://github.com",
+  },
+] as const;
 
 function ProjectCard({ project }: { project: ProjectItem }) {
   const inner = (
@@ -35,7 +70,7 @@ function ProjectCard({ project }: { project: ProjectItem }) {
   return <article className={className}>{inner}</article>;
 }
 
-export function ProjectsSection({ projects }: { projects: readonly ProjectItem[] }) {
+export function ProjectsSection() {
   return (
     <section id="projects" className="border-b border-zinc-800 py-16 sm:py-20">
       <Container>
@@ -52,3 +87,4 @@ export function ProjectsSection({ projects }: { projects: readonly ProjectItem[]
     </section>
   );
 }
+

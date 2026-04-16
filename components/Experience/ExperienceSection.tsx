@@ -1,12 +1,52 @@
 import { Container } from "@/components/Container";
-import type { ExperienceItem } from "@/lib/site-content";
 import { CompanyLogo } from "./CompanyLogo";
 
-export function ExperienceSection({
-  items,
-}: {
-  items: readonly ExperienceItem[];
-}) {
+interface ExperienceItem {
+  title: string;
+  company: string;
+  /** Optional link to the company page (website, LinkedIn, etc). */
+  companyHref?: string;
+  employment: string;
+  dates: string;
+  highlights: readonly string[];
+  /** Square logo under `public/`, e.g. `/logos/company.png`. Omit or null if not set. */
+  logoSrc?: string | null;
+  logoAlt?: string;
+}
+
+export function ExperienceSection() {
+  const items: ExperienceItem[] = [
+    {
+      title: "Software Engineer",
+      company: "Accelist Lentera Indonesia",
+      employment: "Full-time",
+      dates: "Oct 2024 — Present",
+      logoSrc: "/photos/logo-accelist.jpg",
+      companyHref: "https://accelist.com/",
+      highlights: [
+        "Develop and maintain enterprise-grade web applications for Toyota Astra Motor (TAM) using .NET 8 and Next.js (TypeScript)",
+        "Design and implement backend APIs and frontend features for high-volume customer complaint management systems",
+        "Build and manage background processing jobs using Hangfire to automate scheduled tasks and system workflows",
+        "Implement data tokenization and detokenization to secure sensitive customer information across enterprise systems",
+        "Write and maintain unit tests to improve API reliability and ensure system stability in production environments"
+      ],
+    },
+    {
+      title: "Application Developer Intern",
+      company: "Freeport Indonesia",
+      employment: "Full-time",
+      dates: "Feb 2023 — Feb 2024",
+      logoSrc: "/photos/logo-freeport.jpg",
+      companyHref: "https://ptfi.co.id/",
+      highlights: [
+        "Collaborated with a team of developers to deliver internal applications using ASP.NET, SQL Server, and modern web technologies",
+        "Contributed to systems built on microservices architecture to support internal business operations",
+        "Performed testing, debugging, and validation to ensure stable production releases",
+        "Utilized Azure DevOps for CI/CD pipelines, pull requests, and code reviews",
+      ],
+    },
+  ];
+
   return (
     <section
       id="experience"
@@ -56,9 +96,6 @@ export function ExperienceSection({
                   <h3 className="text-xl font-semibold tracking-tight text-zinc-50">
                     {job.title}
                   </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-zinc-400">
-                    {job.summary}
-                  </p>
                   <ul className="mt-5 space-y-3 text-sm leading-relaxed text-zinc-400">
                     {job.highlights.map((line) => (
                       <li key={line} className="flex gap-3">
