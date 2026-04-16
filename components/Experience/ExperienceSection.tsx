@@ -1,5 +1,6 @@
 import { Container } from "@/components/Container";
 import type { ExperienceItem } from "@/lib/site-content";
+import { CompanyLogo } from "./CompanyLogo";
 
 export function ExperienceSection({
   items,
@@ -30,11 +31,26 @@ export function ExperienceSection({
                 className="grid grid-cols-1 gap-8 py-10 first:pt-0 last:pb-0 lg:grid-cols-[minmax(0,13rem)_1fr] lg:gap-12 lg:py-12"
               >
                 <div className="lg:border-r lg:border-zinc-800 lg:pr-8">
-                  <p className="text-sm tabular-nums text-zinc-500">{job.dates}</p>
-                  <p className="mt-3 text-base font-medium text-zinc-200">
-                    {job.company}
-                  </p>
-                  <p className="mt-1 text-sm text-zinc-500">{job.employment}</p>
+                  <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:gap-4 lg:flex-col">
+                    {job.logoSrc ? (
+                      <CompanyLogo
+                        src={job.logoSrc}
+                        alt={job.logoAlt ?? `${job.company} logo`}
+                        href={job.companyHref}
+                      />
+                    ) : null}
+                    <div className="min-w-0">
+                      <p className="text-sm tabular-nums text-zinc-500">
+                        {job.dates}
+                      </p>
+                      <p className="mt-3 text-base font-medium text-zinc-200">
+                        {job.company}
+                      </p>
+                      <p className="mt-1 text-sm text-zinc-500">
+                        {job.employment}
+                      </p>
+                    </div>
+                  </div>
                 </div>
                 <div className="min-w-0">
                   <h3 className="text-xl font-semibold tracking-tight text-zinc-50">

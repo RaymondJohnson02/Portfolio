@@ -1,5 +1,5 @@
 import { ContactSection } from "@/components/ContactSection";
-import { ExperienceSection } from "@/components/ExperienceSection";
+import { ExperienceSection } from "@/components/Experience/ExperienceSection";
 import { HeroSection } from "@/components/HeroSection";
 import { ProjectsSection } from "@/components/ProjectsSection";
 import { SiteHeader } from "@/components/SiteHeader";
