@@ -10,13 +10,13 @@ export function CompanyLogo({
   href?: string;
 }) {
   const content = (
-    <div className="relative size-12 shrink-0 overflow-hidden rounded-lg border border-zinc-700 bg-zinc-900">
+    <div className="relative size-24 shrink-0 overflow-hidden rounded-lg border border-zinc-700 bg-zinc-900">
       <Image
         src={src}
         alt={alt}
         fill
-        sizes="48px"
-        className="object-contain p-1.5"
+        sizes="96px"
+        className="object-contain"
       />
     </div>
   );
